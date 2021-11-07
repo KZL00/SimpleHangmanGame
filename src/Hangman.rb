@@ -37,7 +37,6 @@ class Hangman
     new_teaser = @word_teaser.split
 
     new_teaser.each_with_index do |letter, index|
-      # replace blank values with guessed letter if matches letter in word
       if letter == '_' && @word.first[index] == last_guess
         new_teaser[index] = last_guess
       end
@@ -78,7 +77,6 @@ class Hangman
   end
 
   def begin
-    # ask user for a letter
     puts "New game started! your word is #{ @word.first.size } characters long"
     print_teaser
 
